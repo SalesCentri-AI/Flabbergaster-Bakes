@@ -19,26 +19,6 @@ export default function AboutPage() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
-    const team = [
-        {
-            name: "Isabella Vancini",
-            role: "Founder & Master Pâtissier",
-            bio: "With over 15 years of experience in Michelin-starred kitchens across Paris and London, Isabella founded Flabbergaster to bring art-gallery aesthetics to the world of desserts.",
-            image: ""
-        },
-        {
-            name: "Julian Thorne",
-            role: "Head of Creative Development",
-            bio: "A visionary in flavor profiles, Julian ensures every cake is a multisensory journey. He believes that baking is as much about chemistry as it is about emotion.",
-            image: ""
-        },
-        {
-            name: "Marcus Aurel",
-            role: "Director of Operations",
-            bio: "Marcus ensures that the Flabbergaster experience is seamless from the first click to the final bite, maintaining the highest standards of luxury concierge service.",
-            image: ""
-        }
-    ]
 
     const gallery = [
         "/about_cupcake_1.png",
@@ -158,42 +138,6 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Team Section - Meet the Artisans */}
-                <section className="py-32 px-6 bg-[#3D1414]">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
-                            <div className="space-y-4">
-                                <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">The Atelier Team</span>
-                                <h2 className="text-5xl lg:text-7xl font-serif text-white">Meet the <span className="italic">Artisans</span></h2>
-                            </div>
-                            <p className="max-w-sm text-white/60 font-serif italic text-lg leading-relaxed">
-                                Our team is a collective of dreamers, bakers, and designers, all dedicated to one singular goal: excellence.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-                            {team.map((member, idx) => (
-                                <div key={member.name} className="group overflow-hidden">
-                                    <div className="relative aspect-square rounded-full overflow-hidden mb-8 shadow-lg border-4 border-white/10 group-hover:border-[#D98C8C]/50 transition-all duration-700 bg-gradient-to-br from-[#D98C8C]/20 to-[#4A1D1D]">
-                                        {/* Empty placeholder - ready for team photos */}
-                                        <div className="w-full h-full flex items-center justify-center">
-                                            <div className="w-20 h-20 rounded-full bg-white/5 border-2 border-white/10" />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-4 text-center">
-                                        <div>
-                                            <h3 className="text-3xl font-serif text-white group-hover:text-[#D98C8C] transition-colors">{member.name}</h3>
-                                            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#D98C8C] mt-2">{member.role}</p>
-                                        </div>
-                                        <p className="text-white/60 text-sm italic leading-relaxed max-w-xs mx-auto">
-                                            "{member.bio}"
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
 
                 {/* The Atelier Gallery */}
                 <section className="py-32 px-6 bg-[#4A1D1D]">
@@ -203,24 +147,30 @@ export default function AboutPage() {
                             <h2 className="text-5xl lg:text-7xl font-serif text-white">Recent <span className="italic">Creations</span></h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12">
                             {gallery.map((src, idx) => (
-                                <div key={src} className="relative aspect-square rounded-[1.5rem] overflow-hidden shadow-2xl group border border-white/5 bg-[#3D1414]">
-                                    <Image
-                                        src={src}
-                                        alt="Cupcake creation"
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-[1500ms] ease-out"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F0A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div key={src} className="group relative">
+                                    <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#3D1414]">
+                                        <Image
+                                            src={src}
+                                            alt="Cupcake creation"
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-[2000ms] ease-out"
+                                        />
+                                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
+                                    </div>
+                                    <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#D98C8C] rounded-full flex items-center justify-center text-white font-serif text-xs shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                                        {idx + 1}
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="mt-48 text-center">
-                            <Link href="/menu" className="btn-premium group inline-flex items-center gap-4 border-white/20 text-white hover:bg-white hover:text-[#1A0F0A]">
-                                <span className="uppercase tracking-widest font-bold text-xs">Explore Full Collection</span>
-                                <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                        <div className="mt-32 text-center">
+                            <Link href="/menu" className="group relative inline-flex items-center gap-6 px-12 py-6 bg-white text-[#1A0F0A] rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)]">
+                                <span className="relative z-10 uppercase tracking-[0.3em] font-bold text-xs">Explore Full Collection</span>
+                                <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+                                <div className="absolute inset-0 bg-[#D98C8C] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                             </Link>
                         </div>
                     </div>
@@ -230,7 +180,7 @@ export default function AboutPage() {
             <footer className="py-32 px-6 border-t border-white/5 bg-[#3D1414]">
                 <div className="max-w-7xl mx-auto flex flex-col items-center">
                     <p className="font-script text-7xl text-white mb-4">Flabbergaster Bakes</p>
-                    <p className="text-[#D98C8C] text-sm font-bold tracking-[0.6em] uppercase mb-16">The Art of Pure Fine Baking</p>
+                    <p className="text-[#D98C8C] text-sm font-bold tracking-[0.6em] uppercase mb-16">The Art of Fine Baking</p>
 
                     <div className="flex flex-wrap items-center justify-center gap-x-20 gap-y-8 text-[10px] font-bold uppercase tracking-[0.4em]">
                         <Link href="/" className="text-white/40 hover:text-white transition-colors">Home</Link>

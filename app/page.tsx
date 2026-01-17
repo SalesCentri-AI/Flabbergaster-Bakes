@@ -201,7 +201,7 @@ export default function Home() {
           <div className="w-full h-[1px] bg-[#1A0F0A]/10 mb-12" />
 
           <p className="text-[#4A3728]/40 text-[10px] uppercase tracking-widest font-bold">
-            &copy; 2024 Flabbergaster Bakes Atelier. All Rights Reserve
+            &copy; 2024 Flabbergaster Bakes Atelier. All Rights Reserved.
           </p>
         </div>
       </footer>
