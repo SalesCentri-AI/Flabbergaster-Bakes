@@ -203,16 +203,16 @@ export default function AboutPage() {
                             <h2 className="text-5xl lg:text-7xl font-serif text-white">Recent <span className="italic">Creations</span></h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                             {gallery.map((src, idx) => (
-                                <div key={src} className={`relative aspect-square rounded-[2rem] overflow-hidden shadow-2xl group border border-white/5 ${idx % 2 === 0 ? 'translate-y-0' : 'md:translate-y-12'}`}>
+                                <div key={src} className="relative aspect-square rounded-[1.5rem] overflow-hidden shadow-2xl group border border-white/5 bg-[#3D1414]">
                                     <Image
                                         src={src}
-                                        alt="Cake creation"
+                                        alt="Cupcake creation"
                                         fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                                        className="object-cover group-hover:scale-105 transition-transform duration-[1500ms] ease-out"
                                     />
-                                    <div className="absolute inset-0 bg-[#1A0F0A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F0A]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                 </div>
                             ))}
                         </div>
