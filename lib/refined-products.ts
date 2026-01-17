@@ -9,10 +9,10 @@ export const refinedProducts = [
     },
     {
         id: "2",
-        name: "Triple Chocolate Decadence",
+        name: "Matcha Zen Garden",
         description: "Dark Belgian cocoa sponge topped with silky chocolate ganache and semi-sweet chocolate chips.",
         price: 5.00,
-        image: "/product_chocolate.png",
+        image: "/product_matcha.png",
         category: "Indulgent Series"
     },
     {
