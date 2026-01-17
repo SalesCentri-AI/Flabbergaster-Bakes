@@ -6,10 +6,10 @@ import { useState, useEffect } from "react"
 
 export function HeroRefined() {
     const images = [
-        "/hero_raspberry_cake.png",
-        "/hero_vanilla.png",
-        "/hero_chocolate.png",
-        "/hero_strawberry.png",
+        "/hero_cupcake_4.png",
+        "/hero_cupcake_1.jpg",
+        "/hero_cupcake_2.jpg",
+        "/hero_cupcake_3.jpg",
     ]
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -22,65 +22,76 @@ export function HeroRefined() {
     }, [images.length])
 
     return (
-        <section id="home" className="relative h-screen w-full flex items-center overflow-hidden">
-            {/* Multi-Image Slideshow Background */}
-            <div className="absolute inset-0 z-0">
-                {images.map((src, index) => (
-                    <div
-                        key={src}
-                        className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${index === currentImageIndex ? "opacity-100" : "opacity-0"
-                            }`}
-                    >
-                        <Image
-                            src={src}
-                            alt={`Slide ${index + 1}`}
-                            fill
-                            className="object-cover object-center scale-105"
-                            priority={index === 0}
-                        />
-                    </div>
-                ))}
-                {/* Elegant Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F3E8E2]/90 via-[#F3E8E2]/40 to-transparent z-10" />
-                <div className="absolute inset-0 bg-black/5 z-10" />
-            </div>
-
-            <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-                <div className="max-w-2xl">
-                    <div className="overflow-hidden mb-6">
-                        <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px] block animate-in slide-in-from-bottom-full duration-700">
-                            Artisan Patisserie
-                        </span>
+        <section id="home" className="relative h-screen w-full flex items-center overflow-hidden bg-[#F3E8E2]">
+            {/* Left Side Content - Dedicated Space for Text */}
+            <div className="relative z-20 w-full lg:w-1/2 h-full flex items-center justify-center px-6 lg:px-20 pt-20">
+                <div className="max-w-xl">
+                    <div className="overflow-hidden mb-8">
+                        <div className="flex items-center gap-4 animate-in slide-in-from-bottom-full duration-700">
+                            <span className="w-12 h-[1px] bg-[#D98C8C]" />
+                            <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">
+                                Boutique Cupcake Collection
+                            </span>
+                        </div>
                     </div>
 
-                    <h1 className="title-script text-[#1A0F0A] mb-8 leading-[0.85] animate-in fade-in slide-in-from-left-20 duration-1000 delay-100">
-                        Flabbergaster Bakes
+                    <h1 className="title-script text-[#1A0F0A] mb-8 leading-[0.8] animate-in fade-in slide-in-from-left-20 duration-1000 delay-100">
+                        Flabbergaster<br />
+                        <span className="italic ml-8">Bakes</span>
                     </h1>
 
-                    <p className="font-serif text-xl lg:text-2xl text-[#2A1810]/80 mb-14 leading-relaxed italic font-medium max-w-lg animate-in fade-in slide-in-from-left-10 duration-1000 delay-300">
-                        Lovingly handcrafted cakes and pastries, made for your most precious moments.
+                    <p className="font-serif text-xl lg:text-2xl text-[#2A1810]/70 mb-14 leading-relaxed italic font-medium max-w-lg animate-in fade-in slide-in-from-left-10 duration-1000 delay-300">
+                        "Born from a passion for perfection, our luxury cupcakes are miniature masterpieces crafted to linger in your memory."
                     </p>
 
                     <div className="flex flex-wrap gap-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-500">
                         <Link href="#menu" className="btn-premium">
-                            Explore Our Menu
+                            Explore Collection
                         </Link>
-                        <Link href="#about" className="btn-glass">
-                            Our Story
+                        <Link href="#about" className="group flex items-center gap-4 text-[#1A0F0A] font-bold tracking-widest text-[10px] uppercase hover:text-[#D98C8C] transition-colors">
+                            <span>Our Philosophy</span>
+                            <div className="w-8 h-[1px] bg-[#1A0F0A] group-hover:w-12 group-hover:bg-[#D98C8C] transition-all" />
                         </Link>
                     </div>
                 </div>
+
+                {/* Vertical Decorative Text */}
+                <div className="absolute left-10 bottom-20 hidden xl:block origin-left -rotate-90">
+                    <span className="text-[10px] font-bold tracking-[1em] uppercase text-[#1A0F0A]/20">Est. Boutique MMXXIV</span>
+                </div>
             </div>
 
-            {/* Refined floating scroll indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce shrink-0 z-20">
-                <span className="text-[10px] uppercase tracking-[0.5em] text-[#1A0F0A] font-extrabold drop-shadow-sm">Scroll</span>
-                <div className="w-[1.5px] h-12 bg-gradient-to-b from-[#1A0F0A] via-[#1A0F0A]/40 to-transparent" />
+            {/* Right Side - Featured Image with Editorial Container */}
+            <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-10 lg:relative lg:block h-[120%] lg:h-[90%] -translate-y-[10%] lg:translate-y-0">
+                <div className="relative w-full h-full lg:rounded-l-[10rem] overflow-hidden shadow-2xl border-l border-white/20">
+                    {images.map((src, index) => (
+                        <div
+                            key={src}
+                            className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${index === currentImageIndex ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-110 -rotate-3"
+                                }`}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Cupcake Creation ${index + 1}`}
+                                fill
+                                className="object-cover object-[center_35%]"
+                                priority={index === 0}
+                            />
+                            {/* Sophisticated Image Shadow/Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#F3E8E2]/40 via-transparent to-transparent z-10" />
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            {/* Subtle organic shapes */}
-            <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#D98C8C]/5 blur-[120px] rounded-full pointer-events-none z-10" />
-            <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-[#E5D5CB]/20 blur-[100px] rounded-full pointer-events-none z-10" />
+            {/* Floating scroll indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce z-40">
+                <span className="text-[9px] uppercase tracking-[0.5em] text-[#1A0F0A] font-bold">Discover</span>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-[#1A0F0A] via-[#1A0F0A]/40 to-transparent" />
+            </div>
+
+            {/* Subtle background patterns */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#D98C8C]/5 blur-[150px] rounded-full pointer-events-none" />
         </section>
     )
 }

@@ -24,29 +24,29 @@ export default function AboutPage() {
             name: "Isabella Vancini",
             role: "Founder & Master Pâtissier",
             bio: "With over 15 years of experience in Michelin-starred kitchens across Paris and London, Isabella founded Flabbergaster to bring art-gallery aesthetics to the world of desserts.",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Isabella&backgroundColor=ffdfbf&clothingColor=ffffff"
+            image: ""
         },
         {
             name: "Julian Thorne",
             role: "Head of Creative Development",
             bio: "A visionary in flavor profiles, Julian ensures every cake is a multisensory journey. He believes that baking is as much about chemistry as it is about emotion.",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Julian&backgroundColor=c0aede&clothingColor=3d2b1f"
+            image: ""
         },
         {
             name: "Marcus Aurel",
             role: "Director of Operations",
             bio: "Marcus ensures that the Flabbergaster experience is seamless from the first click to the final bite, maintaining the highest standards of luxury concierge service.",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus&backgroundColor=b6e3f4&clothingColor=ebebeb"
+            image: ""
         }
     ]
 
     const gallery = [
-        "/cake_salted_caramel.png",
-        "/cake_pistachio_rose.png",
-        "/cake_matcha.png",
-        "/cake_hazelnut_praline.png",
-        "/cake_black_forest.png",
-        "/cake_tiramisu.png"
+        "/about_cupcake_1.png",
+        "/product_pistachio.png",
+        "/product_raspberry.png",
+        "/product_caramel.png",
+        "/product_wild_blueberry.png",
+        "/product_matcha.png"
     ]
 
     return (
@@ -65,7 +65,7 @@ export default function AboutPage() {
                     <div className="max-w-7xl mx-auto relative z-10">
                         <div className="flex flex-col items-center text-center">
                             <div className="overflow-hidden mb-6">
-                                <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px] block animate-in slide-in-from-bottom-full duration-700">Atelier of Dreams</span>
+                                <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px] block animate-in slide-in-from-bottom-full duration-700">Atelier of Miniature Dreams</span>
                             </div>
                             <h1 className="text-7xl lg:text-9xl font-serif text-white leading-tight mb-12">
                                 Our <span className="italic text-[#D98C8C]">Story</span>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                             <div className="max-w-3xl relative">
                                 <Quote className="absolute -top-8 -left-8 text-[#D98C8C]/20" size={64} />
                                 <p className="text-2xl lg:text-3xl font-serif italic text-white/90 leading-relaxed">
-                                    "We believe that a cake is more than just a dessert; it is the silent protagonist of your most precious celebrations."
+                                    "We believe that a cupcake is more than just a treat; it is the silent protagonist of your most precious celebrations."
                                 </p>
                             </div>
                         </div>
@@ -97,23 +97,23 @@ export default function AboutPage() {
                             <div className="relative order-2 lg:order-1">
                                 <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
                                     <Image
-                                        src="/hero_raspberry_cake.png"
+                                        src="/about_cupcake_1.png"
                                         alt="The beginning"
                                         fill
                                         className="object-cover"
                                     />
                                 </div>
                                 <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-white p-6 rounded-full flex items-center justify-center text-center shadow-xl rotate-12">
-                                    <span className="font-serif text-lg leading-tight text-[#1A0F0A]">Born in London<br /><span className="text-[#D98C8C] font-bold">2024</span></span>
+                                    <span className="font-serif text-lg leading-tight text-[#1A0F0A]">Mouth Bursting<br /><span className="text-[#D98C8C] font-bold">Flavors</span></span>
                                 </div>
                             </div>
                             <div className="space-y-8 order-1 lg:order-2">
                                 <div className="space-y-4">
                                     <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">The Beginning</span>
-                                    <h2 className="text-5xl lg:text-7xl font-serif text-white leading-tight">A Vision for <br /><span className="italic">Perfection.</span></h2>
+                                    <h2 className="text-5xl lg:text-7xl font-serif text-white leading-tight">A Vision for <br /><span className="italic">Boutique Baking.</span></h2>
                                 </div>
                                 <p className="text-white/70 text-lg leading-relaxed font-serif italic">
-                                    Flabbergaster Bakes started in a small, sunlight-drenched kitchen in West London. Our founder, Isabella, tired of the mass-produced cakes flooding the market, decided to strip baking back to its roots: pure ingredients, meticulous technique, and boundless heart.
+                                    Flabbergaster Bakes started in a small, sunlight-drenched kitchen . Our founder, Isabella, tired of the mass-produced cupcakes flooding the market, decided to strip baking back to its roots: pure ingredients, meticulous technique, and boundless heart.
                                 </p>
                             </div>
                         </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
                             <div className="relative">
                                 <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
                                     <Image
-                                        src="/cake_red_velvet.png"
+                                        src="/product_cookies.png"
                                         alt="Our craft"
                                         fill
                                         className="object-cover"
@@ -174,13 +174,11 @@ export default function AboutPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
                             {team.map((member, idx) => (
                                 <div key={member.name} className="group overflow-hidden">
-                                    <div className="relative aspect-square rounded-full overflow-hidden mb-8 shadow-lg border-4 border-white/10 group-hover:border-[#D98C8C]/50 transition-all duration-700 bg-[#4A1D1D]">
-                                        <img
-                                            src={member.image}
-                                            alt={member.name}
-                                            className="w-full h-full object-contain p-8 scale-110 group-hover:scale-100 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-[#D98C8C]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="relative aspect-square rounded-full overflow-hidden mb-8 shadow-lg border-4 border-white/10 group-hover:border-[#D98C8C]/50 transition-all duration-700 bg-gradient-to-br from-[#D98C8C]/20 to-[#4A1D1D]">
+                                        {/* Empty placeholder - ready for team photos */}
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <div className="w-20 h-20 rounded-full bg-white/5 border-2 border-white/10" />
+                                        </div>
                                     </div>
                                     <div className="space-y-4 text-center">
                                         <div>

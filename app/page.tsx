@@ -6,6 +6,7 @@ import { HeroRefined } from "@/components/HeroRefined"
 import { ProductCardRefined } from "@/components/ProductCardRefined"
 import { Sparkles, MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 
 import { AboutSectionRefined } from "@/components/AboutSectionRefined"
@@ -44,9 +45,9 @@ export default function Home() {
                   <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">Collection 2024</span>
                 </div>
                 <h2 className="text-6xl lg:text-8xl font-serif text-[#1A0F0A] leading-[0.9] tracking-tight">
-                  Signature<br />
+                  Handcrafted<br />
                   <span className="italic relative inline-block">
-                    Creations
+                    Cupcakes
                     <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-[#D98C8C]/20" />
                   </span>
                 </h2>
@@ -54,10 +55,10 @@ export default function Home() {
 
               <div className="flex flex-col items-start md:items-end gap-10 max-w-sm">
                 <p className="text-[#4A3728]/70 font-serif text-xl italic leading-relaxed text-left md:text-right">
-                  "A curated selection of our most beloved masterpieces, where every bite tells a story of craftsmanship."
+                  "A curated selection of our most delicate cupcake blossoms, where every bite is a miniature celebration."
                 </p>
                 <Link href="/menu" className="group flex items-center gap-4 bg-[#1A0F0A] text-white px-10 py-5 rounded-full hover:bg-[#D98C8C] transition-all duration-500 shadow-xl hover:shadow-2xl">
-                  <span className="text-sm font-bold uppercase tracking-widest">Explore Full Menu</span>
+                  <span className="text-sm font-bold uppercase tracking-widest">View Cupcake Menu</span>
                   <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
@@ -96,7 +97,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h5 className="font-serif text-2xl mb-1">Our Flagship</h5>
-                      <p className="text-[#4A3728]/60 text-lg italic">123 Baker Street, Mayfair, London</p>
+                      <p className="text-[#4A3728]/60 text-lg italic">123 Baker Street, Mayfair</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-8">
@@ -193,14 +194,14 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-20 gap-y-8 mb-20 text-xs font-bold uppercase tracking-[0.3em]">
             <Link href="#home" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">Home</Link>
             <Link href="#menu" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">Selection</Link>
-            <Link href="#about" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">Atelier</Link>
-            <Link href="#contact" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">Concierge</Link>
+            <Link href="#about" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">About</Link>
+            <Link href="#contact" className="text-[#1A0F0A]/60 hover:text-[#1A0F0A] transition-colors">Contact</Link>
           </div>
 
           <div className="w-full h-[1px] bg-[#1A0F0A]/10 mb-12" />
 
           <p className="text-[#4A3728]/40 text-[10px] uppercase tracking-widest font-bold">
-            &copy; 2024 Flabbergaster Bakes Atelier. All Rights Reserved.
+            &copy; 2024 Flabbergaster Bakes Atelier. All Rights Reserve
           </p>
         </div>
       </footer>

@@ -9,9 +9,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"], variable: "--font-script" })
 
 export const metadata: Metadata = {
-  title: "Flabbergaster Bakes - Handcrafted Cakes & Desserts",
+  title: "Flabbergaster Bakes - Handcrafted Designer Cupcakes",
   description:
-    "Delightfully handcrafted cakes made with fresh ingredients. Perfect for birthdays, celebrations, and special occasions!",
+    "Delightfully handcrafted designer cupcakes made with fresh ingredients. Perfect for celebrations, weddings, and special moments!",
   icons: {
     icon: [
       {

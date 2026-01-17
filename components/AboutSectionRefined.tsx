@@ -16,10 +16,10 @@ export function AboutSectionRefined() {
     ]
 
     const images = [
-        "/product_cake_1.png",
-        "/cake_red_velvet.png",
-        "/cake_salted_caramel.png",
-        "/cake_pistachio_rose.png"
+        "/about_cupcake_1.png",
+        "/product_chocolate.png",
+        "/product_blueberry.png",
+        "/product_mango.png"
     ]
 
     useEffect(() => {
@@ -97,7 +97,7 @@ export function AboutSectionRefined() {
                         </div>
 
                         <p className="text-[#4A3728]/80 text-2xl leading-relaxed font-serif italic max-w-xl border-l-2 border-[#D98C8C]/20 pl-8">
-                            "Born from a passion for perfection, Flabbergaster Bakes isn't just a bakery—it's an atelier of sugar and dreams. We don't bake cakes; we craft memories that linger long after the last bite."
+                            "Born from a passion for perfection, Flabbergaster Bakes isn't just a bakery—it's an atelier of sugar and dreams. We don't just bake cupcakes; we craft miniature masterpieces that linger long after the last bite."
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-4">

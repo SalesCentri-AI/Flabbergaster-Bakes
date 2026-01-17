@@ -5,6 +5,7 @@ import { NavbarRefined } from "@/components/NavbarRefined"
 import { ProductCardRefined } from "@/components/ProductCardRefined"
 import { ArrowLeft, Sparkles } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
 export default function MenuPage() {
@@ -53,7 +54,7 @@ export default function MenuPage() {
                                 Our Full <span className="italic text-[#8B4C4C]">Menu</span>
                             </h1>
                             <p className="text-[#4A3728]/70 font-serif text-xl italic max-w-2xl mx-auto">
-                                "Handcrafted with passion, served with grace. Explore our complete selection of artisanal masterpieces."
+                                "Handcrafted with passion, served with grace. Explore our complete selection of artisanal cupcake curiosities."
                             </p>
                         </div>
                     </div>
