@@ -114,18 +114,10 @@ export default function CartPage() {
                     <span className="text-[#8C7364]">Subtotal</span>
                     <span className="font-medium">₹{getTotalPrice().toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-[#8C7364]">Shipping</span>
-                    <span className="font-medium">Free</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-[#8C7364]">Tax (10%)</span>
-                    <span className="font-medium">₹{(getTotalPrice() * 0.1).toFixed(2)}</span>
-                  </div>
                   <div className="border-t border-[#E5D5CB] pt-4">
                     <div className="flex justify-between">
                       <span className="font-serif text-xl">Total</span>
-                      <span className="font-serif text-2xl">₹{(getTotalPrice() * 1.1).toFixed(2)}</span>
+                      <span className="font-serif text-2xl">₹{getTotalPrice().toFixed(2)}</span>
                     </div>
                   </div>
                 </div>

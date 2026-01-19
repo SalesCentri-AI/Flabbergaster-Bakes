@@ -46,8 +46,6 @@ export default function CheckoutPage() {
   }
 
   const totalPrice = getTotalPrice()
-  const tax = totalPrice * 0.1
-  const finalTotal = totalPrice + tax
 
   return (
     <div className="relative min-h-screen">
@@ -285,18 +283,10 @@ export default function CheckoutPage() {
                         <span className="text-[#8C7364]">Subtotal</span>
                         <span className="font-medium">₹{totalPrice.toFixed(2)}</span>
                       </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-[#8C7364]">Tax</span>
-                        <span className="font-medium">₹{tax.toFixed(2)}</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-[#8C7364]">Shipping</span>
-                        <span className="font-medium">Free</span>
-                      </div>
                       <div className="border-t border-[#E5D5CB] pt-2 mt-2">
                         <div className="flex justify-between">
                           <span className="font-serif text-lg">Total</span>
-                          <span className="font-serif text-xl">₹{finalTotal.toFixed(2)}</span>
+                          <span className="font-serif text-xl">₹{totalPrice.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>

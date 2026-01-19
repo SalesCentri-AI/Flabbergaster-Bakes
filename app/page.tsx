@@ -13,13 +13,6 @@ import { AboutSectionRefined } from "@/components/AboutSectionRefined"
 
 export default function Home() {
   const featuredProducts = refinedProducts.slice(0, 3)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert("Message sent! We'll get back to you soon.")
-    setFormData({ name: "", email: "", message: "" })
-  }
 
   return (
     <div className="relative min-h-screen">
@@ -121,49 +114,56 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#D98C8C]/10 blur-3xl rounded-full" />
-                <form onSubmit={handleContactSubmit} className="bg-[#F3E8E2] p-12 lg:p-16 rounded-[3rem] space-y-8 relative z-10 shadow-2xl">
-                  <div className="space-y-4 text-center mb-8">
-                    <h3 className="font-serif text-3xl">Bespoke Inquiry</h3>
-                    <p className="text-sm text-[#4A3728]/60 uppercase tracking-widest font-bold">Standard response time: 2 hours</p>
+              <div className="relative h-[600px] w-full group overflow-hidden rounded-[3rem] shadow-2xl">
+                {/* Background Image of the Storefront */}
+                <Image
+                  src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1000&auto=format&fit=crop"
+                  alt="Flabbergaster Bakes Atelier"
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+
+                {/* Darker Gradient Overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* Glassmorphism Address Card */}
+                <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-[2rem] text-white space-y-6">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                    <div>
+                      <h3 className="font-serif text-3xl mb-2">Our Atelier</h3>
+                      <div className="flex items-center gap-3 text-white/80">
+                        <MapPin size={18} className="text-[#D98C8C]" />
+                        <span className="italic font-serif">123 Baker Street, Mayfair, London</span>
+                      </div>
+                    </div>
+
+                    <a
+                      href="https://maps.google.com/?q=123+Baker+Street+Mayfair+London"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-[#1A0F0A] px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-[#D98C8C] hover:text-white transition-all duration-300 shadow-lg"
+                    >
+                      Get Directions
+                    </a>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-[#4A3728]">Your Name</label>
-                      <input
-                        type="text"
-                        className="w-full bg-transparent border-b border-[#4A3728]/20 py-3 focus:border-[#4A3728] transition-colors outline-none font-serif text-lg"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      />
+                  <div className="h-[1px] bg-white/10 w-full" />
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div className="space-y-1">
+                      <p className="text-[#D98C8C] text-[10px] font-bold uppercase tracking-widest">Opening Hours</p>
+                      <p className="font-serif italic text-white/80">Mon - Fri: 9am - 7pm</p>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest font-bold text-[#4A3728]">Your Email</label>
-                      <input
-                        type="email"
-                        className="w-full bg-transparent border-b border-[#4A3728]/20 py-3 focus:border-[#4A3728] transition-colors outline-none font-serif text-lg"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      />
+                    <div className="space-y-1">
+                      <p className="text-[#D98C8C] text-[10px] font-bold uppercase tracking-widest">Private Line</p>
+                      <p className="font-serif italic text-white/80">+44 20 7946 0123</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-[#D98C8C] text-[10px] font-bold uppercase tracking-widest">Inquiries</p>
+                      <p className="font-serif italic text-white/80">bespoke@flabbergaster.com</p>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase tracking-widest font-bold text-[#4A3728]">Tell us about your event</label>
-                    <textarea
-                      className="w-full bg-transparent border-b border-[#4A3728]/20 py-3 focus:border-[#4A3728] transition-colors outline-none font-serif text-lg h-32 resize-none"
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    />
-                  </div>
-                  <button type="submit" className="w-full btn-premium py-6">
-                    Request a Consultation
-                  </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
