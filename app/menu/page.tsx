@@ -1,8 +1,9 @@
 "use client"
 
-import { refinedProducts } from "@/lib/refined-products"
+import { refinedProducts, getProducts } from "@/lib/refined-products"
 import { NavbarRefined } from "@/components/NavbarRefined"
 import { ProductCardRefined } from "@/components/ProductCardRefined"
+import { CommissionModal } from "@/components/CommissionModal"
 import { ArrowLeft, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -10,12 +11,37 @@ import { useState, useEffect } from "react"
 
 export default function MenuPage() {
     const [activeCategory, setActiveCategory] = useState("All")
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [products, setProducts] = useState(refinedProducts)
+    const [loading, setLoading] = useState(true)
 
-    const categories = ["All", ...Array.from(new Set(refinedProducts.map(p => p.category)))]
+    // Fetch products from WordPress on component mount
+    useEffect(() => {
+        async function loadProducts() {
+            setLoading(true)
+            const wpProducts = await getProducts()
+            setProducts(wpProducts)
+            setLoading(false)
+        }
+        loadProducts()
+    }, [])
+
+    // Get unique categories, filter out "Uncategorized", and sort with Signature Collection first
+    const allCategories = Array.from(new Set(products.map(p => p.category)))
+        .filter(cat => cat.toLowerCase() !== 'uncategorized') // Remove Uncategorized
+        .sort((a, b) => {
+            // Put "Signature Collection" first
+            if (a === 'Signature Collection') return -1;
+            if (b === 'Signature Collection') return 1;
+            // Then alphabetically
+            return a.localeCompare(b);
+        });
+
+    const categories = ["All", ...allCategories];
 
     const filteredProducts = activeCategory === "All"
-        ? refinedProducts
-        : refinedProducts.filter(p => p.category === activeCategory)
+        ? products
+        : products.filter(p => p.category === activeCategory)
 
     return (
         <div className="relative min-h-screen bg-[#F3E8E2]">
@@ -97,10 +123,19 @@ export default function MenuPage() {
                         <p className="text-[#4A3728]/70 font-serif italic max-w-xl">
                             Our master artisans are ready to create a custom masterpiece for your most precious moments. Contact our concierge for private commissions.
                         </p>
-                        <Link href="#contact" className="btn-premium">
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="btn-premium"
+                        >
                             Request Private Commission
-                        </Link>
+                        </button>
                     </div>
+
+                    {/* Commission Modal */}
+                    <CommissionModal
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                    />
                 </div>
             </main>
 

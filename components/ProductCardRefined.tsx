@@ -60,7 +60,7 @@ export function ProductCardRefined({ product }: { product: Product }) {
 
                     {/* Price Tag - Top Left */}
                     <div className="absolute top-6 left-6 px-5 py-2 bg-white/80 backdrop-blur-md rounded-full shadow-sm">
-                        <span className="text-sm font-bold text-[#1A0F0A]">${product.price.toFixed(2)}</span>
+                        <span className="text-sm font-bold text-[#1A0F0A]">₹{product.price.toFixed(2)}</span>
                     </div>
                 </div>
 

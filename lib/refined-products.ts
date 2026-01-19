@@ -1,3 +1,5 @@
+import { getCupcakes } from './wordpress';
+
 export const refinedProducts = [
     {
         id: "1",
@@ -96,3 +98,23 @@ export const refinedProducts = [
         category: "Signature Collection"
     }
 ];
+
+// Function to get products from WordPress (with fallback to static)
+export async function getProducts() {
+    try {
+        console.log('🔄 Attempting to fetch cupcakes from WordPress...');
+        const wpProducts = await getCupcakes();
+
+        if (wpProducts.length > 0) {
+            console.log('✅ Successfully loaded', wpProducts.length, 'cupcakes from WordPress!');
+            return wpProducts;
+        } else {
+            console.log('⚠️ No cupcakes found in WordPress, using static products');
+            return refinedProducts;
+        }
+    } catch (error) {
+        console.error('❌ WordPress fetch failed:', error);
+        console.log('📦 Falling back to static products');
+        return refinedProducts;
+    }
+}

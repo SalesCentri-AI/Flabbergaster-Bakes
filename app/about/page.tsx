@@ -93,7 +93,7 @@ export default function AboutPage() {
                                     <h2 className="text-5xl lg:text-7xl font-serif text-white leading-tight">A Vision for <br /><span className="italic">Boutique Baking.</span></h2>
                                 </div>
                                 <p className="text-white/70 text-lg leading-relaxed font-serif italic">
-                                    Flabbergaster Bakes started in a small, sunlight-drenched kitchen . Our founder, Isabella, tired of the mass-produced cupcakes flooding the market, decided to strip baking back to its roots: pure ingredients, meticulous technique, and boundless heart.
+                                    Flabbergaster Bakes started with a simple belief: that every cupcake should be a small work of art. What began as a passion project in a cozy kitchen has blossomed into a boutique dedicated to creating memorable moments, one cupcake at a time.
                                 </p>
                             </div>
                         </div>
@@ -106,13 +106,13 @@ export default function AboutPage() {
                                     <h2 className="text-5xl lg:text-7xl font-serif text-white leading-tight">The Art of <br /><span className="italic">The Whisk.</span></h2>
                                 </div>
                                 <p className="text-white/70 text-lg leading-relaxed font-serif italic">
-                                    Every ingredient that enters our atelier is hand-selected. From the organic Madagascar vanilla beans to the farm-fresh local berries, we don't compromise on quality because we know you don't either.
+                                    We believe in the power of quality ingredients and careful craftsmanship. Each cupcake is made fresh daily with premium ingredients, thoughtful flavor combinations, and attention to every detail—from the perfect crumb to the final swirl of frosting.
                                 </p>
                                 <div className="grid grid-cols-2 gap-8">
                                     <div className="space-y-2">
                                         <div className="text-[#D98C8C]"><Star size={24} fill="currentColor" /></div>
-                                        <h4 className="font-serif text-xl">Michelin Standards</h4>
-                                        <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">In every layer</p>
+                                        <h4 className="font-serif text-xl">Premium Quality</h4>
+                                        <p className="text-[10px] text-white/40 uppercase tracking-widest font-bold">In every bite</p>
                                     </div>
                                     <div className="space-y-2">
                                         <div className="text-[#D98C8C]"><Heart size={24} fill="currentColor" /></div>

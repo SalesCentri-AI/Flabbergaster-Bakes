@@ -274,7 +274,7 @@ export default function CheckoutPage() {
                             {item.name} x{item.quantity}
                           </span>
                           <span className="font-medium">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </span>
                         </div>
                       ))}
@@ -283,11 +283,11 @@ export default function CheckoutPage() {
                     <div className="border-t border-[#E5D5CB] pt-4 space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-[#8C7364]">Subtotal</span>
-                        <span className="font-medium">${totalPrice.toFixed(2)}</span>
+                        <span className="font-medium">₹{totalPrice.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-[#8C7364]">Tax</span>
-                        <span className="font-medium">${tax.toFixed(2)}</span>
+                        <span className="font-medium">₹{tax.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-[#8C7364]">Shipping</span>
@@ -296,7 +296,7 @@ export default function CheckoutPage() {
                       <div className="border-t border-[#E5D5CB] pt-2 mt-2">
                         <div className="flex justify-between">
                           <span className="font-serif text-lg">Total</span>
-                          <span className="font-serif text-xl">${finalTotal.toFixed(2)}</span>
+                          <span className="font-serif text-xl">₹{finalTotal.toFixed(2)}</span>
                         </div>
                       </div>
                     </div>
@@ -309,8 +309,7 @@ export default function CheckoutPage() {
       </main>
 
       <footer className="py-20 border-t border-[#E5D5CB]/50 text-center">
-        <p className="font-script text-4xl text-[#D98C8C] mb-4">Flabbergaster Bakes</p>
-        <p className="text-[#8C7364] text-sm font-medium tracking-widest uppercase">Since 2024</p>
+        <p className="font-script text-4xl text-[#D98C8C]">Flabbergaster Bakes</p>
       </footer>
     </div>
   )

@@ -42,7 +42,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <span className="w-12 h-[1px] bg-[#D98C8C]" />
-                  <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">Collection 2024</span>
+                  <span className="text-[#D98C8C] font-bold tracking-[0.4em] uppercase text-[10px]">The Collection</span>
                 </div>
                 <h2 className="text-6xl lg:text-8xl font-serif text-[#1A0F0A] leading-[0.9] tracking-tight">
                   Handcrafted<br />
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="w-full h-[1px] bg-[#1A0F0A]/10 mb-12" />
 
           <p className="text-[#4A3728]/40 text-[10px] uppercase tracking-widest font-bold">
-            &copy; 2024 Flabbergaster Bakes Atelier. All Rights Reserved.
+            &copy; Flabbergaster Bakes Atelier. All Rights Reserved.
           </p>
         </div>
       </footer>

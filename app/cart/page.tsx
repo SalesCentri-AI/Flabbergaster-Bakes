@@ -62,7 +62,7 @@ export default function CartPage() {
 
                   <div className="flex-1">
                     <h3 className="font-serif text-xl mb-1">{item.name}</h3>
-                    <p className="text-[#8C7364] mb-4">${item.price.toFixed(2)} each</p>
+                    <p className="text-[#8C7364] mb-4">₹{item.price.toFixed(2)} each</p>
 
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-3 bg-white/50 rounded-full px-4 py-2">
@@ -91,7 +91,7 @@ export default function CartPage() {
                   </div>
 
                   <div className="text-right">
-                    <p className="font-serif text-2xl">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="font-serif text-2xl">₹{(item.price * item.quantity).toFixed(2)}</p>
                   </div>
                 </div>
               ))}
@@ -112,7 +112,7 @@ export default function CartPage() {
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between">
                     <span className="text-[#8C7364]">Subtotal</span>
-                    <span className="font-medium">${getTotalPrice().toFixed(2)}</span>
+                    <span className="font-medium">₹{getTotalPrice().toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#8C7364]">Shipping</span>
@@ -120,12 +120,12 @@ export default function CartPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#8C7364]">Tax (10%)</span>
-                    <span className="font-medium">${(getTotalPrice() * 0.1).toFixed(2)}</span>
+                    <span className="font-medium">₹{(getTotalPrice() * 0.1).toFixed(2)}</span>
                   </div>
                   <div className="border-t border-[#E5D5CB] pt-4">
                     <div className="flex justify-between">
                       <span className="font-serif text-xl">Total</span>
-                      <span className="font-serif text-2xl">${(getTotalPrice() * 1.1).toFixed(2)}</span>
+                      <span className="font-serif text-2xl">₹{(getTotalPrice() * 1.1).toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
@@ -150,8 +150,7 @@ export default function CartPage() {
       </main>
 
       <footer className="py-20 border-t border-[#E5D5CB]/50 text-center">
-        <p className="font-script text-4xl text-[#D98C8C] mb-4">Flabbergaster Bakes</p>
-        <p className="text-[#8C7364] text-sm font-medium tracking-widest uppercase">Since 2024</p>
+        <p className="font-script text-4xl text-[#D98C8C]">Flabbergaster Bakes</p>
       </footer>
     </div>
   )

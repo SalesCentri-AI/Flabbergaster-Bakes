@@ -161,8 +161,7 @@ export default function ContactPage() {
             </main>
 
             <footer className="py-20 border-t border-[#E5D5CB]/50 text-center">
-                <p className="font-script text-4xl text-[#D98C8C] mb-4">Flabbergaster Bakes</p>
-                <p className="text-[#8C7364] text-sm font-medium tracking-widest uppercase">Since 2024</p>
+                <p className="font-script text-4xl text-[#D98C8C]">Flabbergaster Bakes</p>
             </footer>
         </div>
     )
