@@ -64,7 +64,7 @@ export default function Home() {
                   <span className="absolute -top-16 -left-8 font-serif text-[12rem] text-[#1A0F0A]/[0.03] leading-none pointer-events-none select-none">
                     0{index + 1}
                   </span>
-                  <ProductCardRefined product={product} />
+                  <ProductCardRefined product={product} displayOnly={true} />
                 </div>
               ))}
             </div>

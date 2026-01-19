@@ -9,7 +9,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 
 export default function MenuPage() {
-    const [products, setProducts] = useState(refinedProducts)
+    const [products, setProducts] = useState<any[]>([]) // Start with empty array
     const [loading, setLoading] = useState(true)
 
     // Fetch products from WordPress on component mount
@@ -67,15 +67,48 @@ export default function MenuPage() {
 
                     {/* Product Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
-                        {products.map((product, index) => (
-                            <div key={product.id} className="relative animate-in fade-in slide-in-from-bottom-10 duration-700" style={{ animationDelay: `${index * 50}ms` }}>
-                                {/* Background Number */}
-                                <span className="absolute -top-12 -left-6 font-serif text-9xl text-[#1A0F0A]/[0.02] leading-none pointer-events-none select-none">
-                                    {String(index + 1).padStart(2, '0')}
-                                </span>
-                                <ProductCardRefined product={product} />
+                        {loading ? (
+                            // Loading Skeleton
+                            Array.from({ length: 6 }).map((_, index) => (
+                                <div key={index} className="relative animate-pulse">
+                                    {/* Skeleton Background Number */}
+                                    <span className="absolute -top-12 -left-6 font-serif text-9xl text-[#1A0F0A]/[0.02] leading-none pointer-events-none select-none">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+
+                                    {/* Skeleton Card */}
+                                    <div className="space-y-6">
+                                        {/* Skeleton Image */}
+                                        <div className="w-full aspect-[4/5] bg-[#E5D5CB]/30 rounded-[2.5rem]" />
+
+                                        {/* Skeleton Text */}
+                                        <div className="space-y-3 px-2">
+                                            <div className="h-8 bg-[#E5D5CB]/30 rounded-full w-3/4 mx-auto" />
+                                            <div className="h-4 bg-[#E5D5CB]/20 rounded-full w-full" />
+                                            <div className="h-4 bg-[#E5D5CB]/20 rounded-full w-5/6 mx-auto" />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        ) : products.length > 0 ? (
+                            // Actual Products
+                            products.map((product, index) => (
+                                <div key={product.id} className="relative animate-in fade-in slide-in-from-bottom-10 duration-700" style={{ animationDelay: `${index * 50}ms` }}>
+                                    {/* Background Number */}
+                                    <span className="absolute -top-12 -left-6 font-serif text-9xl text-[#1A0F0A]/[0.02] leading-none pointer-events-none select-none">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+                                    <ProductCardRefined product={product} />
+                                </div>
+                            ))
+                        ) : (
+                            // No Products Found
+                            <div className="col-span-full text-center py-20">
+                                <p className="font-serif text-2xl text-[#4A3728]/60 italic">
+                                    No cupcakes available at the moment. Please check back soon!
+                                </p>
                             </div>
-                        ))}
+                        )}
                     </div>
                 </div>
             </main>
